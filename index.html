@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel POST Requests</title>
+</head>
+
+<body>
+    <button id="requestButton">Click để gọi 20 requests</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to make a single POST request to the endpoint with a body
+        async function makePostRequest(endpoint, body) {
+            try {
+                const response = await axios.post(endpoint, body);
+                console.log('Response:', response.data); // Logging response data
+            } catch (error) {
+                console.error('Error making request:', error);
+            }
+        }
+
+        
+        async function callEndpointInParallel() {
+            const endpoint = 'http://localhost:8080/update'; 
+
+           
+            const requests = [];
+
+
+            for (let i = 0; i < 50; i++) {
+                const requestBody = {
+                    "id": 2,
+                    "name": "Nguyen Van Dong sau updte" + i,
+                    "age": 23 + i
+                };
+
+                requests.push(makePostRequest(endpoint, requestBody));
+            }
+
+           
+            await Promise.all(requests);
+        }
+
+        
+        document.getElementById('requestButton').addEventListener('click', () => {
+            callEndpointInParallel();
+        });
+    </script>
+</body>
+
+</html>
