@@ -17,6 +17,23 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background: #575757;
         }
         .container {
             width: 80%;
@@ -28,14 +45,21 @@
             padding: 20px;
             margin-top: 20px;
         }
-        .skills, .projects {
+        .bio img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .skills, .projects, .experience, .education {
             margin-top: 20px;
         }
-        .skills ul, .projects ul {
+        .skills ul, .projects ul, .experience ul, .education ul {
             list-style: none;
             padding: 0;
         }
-        .skills li, .projects li {
+        .skills li, .projects li, .experience li, .education li {
             background: #fff;
             margin: 5px 0;
             padding: 10px;
@@ -61,35 +85,75 @@
 <body>
 
 <header>
-    <h1>Trang Web Cá Nhân</h1>
+    <h1>Nguyễn Văn Đồng</h1>
+    <p>Kỹ sư phần mềm chuyên nghiệp</p>
 </header>
 
+<nav>
+    <a href="#bio">Tiểu Sử</a>
+    <a href="#skills">Kỹ Năng</a>
+    <a href="#projects">Dự Án</a>
+    <a href="#experience">Kinh Nghiệm</a>
+    <a href="#education">Học Vấn</a>
+    <a href="#contact">Liên Hệ</a>
+</nav>
+
 <div class="container">
-    <section class="bio">
+    <section id="bio" class="bio">
         <h2>Tiểu Sử</h2>
-        <p>Xin chào, tôi là [Tên Của Bạn], một kỹ sư phần mềm chuyên về Java và quản lý tài chính. Tôi có niềm đam mê với công nghệ và luôn nỗ lực để cải thiện kỹ năng và kiến thức của mình.</p>
+        <img src="profile.jpg" alt="Profile Picture">
+        <p>Xin chào, tôi là [Tên Của Bạn], một kỹ sư phần mềm chuyên về Java và quản lý tài chính. Tôi có niềm đam mê với công nghệ và luôn nỗ lực để cải thiện kỹ năng và kiến thức của mình. Với nhiều năm kinh nghiệm trong lĩnh vực phát triển phần mềm, tôi đã tham gia và hoàn thành nhiều dự án thành công, đóng góp vào sự phát triển của các công ty mà tôi đã làm việc.</p>
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
         <h2>Kỹ Năng</h2>
         <ul>
             <li>Java</li>
             <li>Quản lý tài chính</li>
             <li>HTML, CSS, JavaScript</li>
             <li>Cơ sở dữ liệu SQL</li>
+            <li>Phát triển ứng dụng web</li>
+            <li>Git và GitHub</li>
         </ul>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
         <h2>Dự Án</h2>
         <ul>
-            <li>Dự án A: Mô tả ngắn về dự án A.</li>
-            <li>Dự án B: Mô tả ngắn về dự án B.</li>
-            <li>Dự án C: Mô tả ngắn về dự án C.</li>
+            <li>
+                <strong>Dự án A:</strong> Mô tả ngắn về dự án A. Đây là dự án về quản lý tài chính cá nhân với các tính năng tự động hóa việc theo dõi chi tiêu và đầu tư.
+            </li>
+            <li>
+                <strong>Dự án B:</strong> Mô tả ngắn về dự án B. Dự án này là một ứng dụng web giúp người dùng dễ dàng quản lý công việc và dự án của họ.
+            </li>
+            <li>
+                <strong>Dự án C:</strong> Mô tả ngắn về dự án C. Đây là một hệ thống thương mại điện tử với khả năng xử lý giao dịch và quản lý kho hàng hiệu quả.
+            </li>
         </ul>
     </section>
 
-    <section class="contact">
+    <section id="experience" class="experience">
+        <h2>Kinh Nghiệm</h2>
+        <ul>
+            <li>
+                <strong>Công ty XYZ:</strong> Kỹ sư phần mềm, 2020 - Hiện tại. Tại đây, tôi đã tham gia phát triển và duy trì các ứng dụng web quan trọng, cải thiện hiệu suất và bảo mật hệ thống.
+            </li>
+            <li>
+                <strong>Công ty ABC:</strong> Kỹ sư phần mềm, 2016 - 2020. Tôi đã đóng góp vào việc phát triển các sản phẩm phần mềm mới và tối ưu hóa quy trình phát triển phần mềm.
+            </li>
+        </ul>
+    </section>
+
+    <section id="education" class="education">
+        <h2>Học Vấn</h2>
+        <ul>
+            <li>
+                <strong>Đại học DEF:</strong> Cử nhân Khoa học Máy tính, 2012 - 2016. Tôi đã học được các kiến thức nền tảng về khoa học máy tính và kỹ thuật phần mềm tại đây.
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
         <h2>Liên Hệ</h2>
         <p>Bạn có thể liên hệ với tôi qua email tại <a href="mailto:your-email@example.com">your-email@example.com</a></p>
         <p>Hoặc kết nối với tôi qua các mạng xã hội:</p>
